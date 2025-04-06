@@ -104,3 +104,164 @@
 
 </body>
 </html>
+
+
+
+
+
+
+Here is a **corrected and cleaned-up version** of your HTML file that fixes all the issues you mentioned:
+
+---
+
+### ✅ Fixes applied:
+1. **Buttons text not showing** – Added text content inside `<a>` elements.
+2. **Font and style inconsistencies** – Applied consistent styles via CSS classes.
+3. **Paragraphs justified and with line breaks** – Justified all paragraphs and improved spacing.
+4. **Buttons wider** – Increased padding to make them wider.
+5. **Structural issues** – Removed multiple `<body>` and `<style>` tags in invalid places, cleaned up the HTML structure.
+
+---
+
+### ✅ **Corrected HTML Code**:
+
+```html
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <title>Week 2: Web Technologies</title>
+    <link rel="icon" href="https://c4046159.github.io/WEB_TECHNOLOGIES/icon1.png" type="image/x-icon">
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: 'Arial Narrow', Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: blue;
+            padding: 1em;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            font-family: Arial, sans-serif;
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 1em;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #FFD700;
+            color: #000;
+            padding: 1em 3em; /* wider */
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 0.5em;
+        }
+
+        .button:focus {
+            outline: 3px solid #000;
+        }
+
+        .button:hover {
+            background-color: #FFC300;
+        }
+
+        hr {
+            margin: 2em 0;
+        }
+
+        img {
+            display: block;
+            margin: 1em auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="https://c4046159.github.io/WEB_TECHNOLOGIES/index.html" class="button" role="button" aria-label="Back to Week 1">BACK</a>
+        <a href="https://c4046159.github.io/WEB_TECHNOLOGIES/week3.html" class="button" role="button" aria-label="Go to Week 3">NEXT</a>
+    </header>
+
+    <main>
+        <h1>Industrial Automation System: What is it?<br> Types and Benefits</h1>
+
+        <p><em>February 21, 2023</em><br>
+        <strong>5 min read | Schneider Electric</strong><br>
+        Original text from: 
+        <a href="https://blog.se.com/sustainability/2023/02/21/industrial-automation-system-what-is-it-types-and-benefits/" target="_blank">
+            Schneider Electric Blog
+        </a></p>
+
+        <hr>
+        <img src="https://c4046159.github.io/WEB_TECHNOLOGIES/week2.1.jpg" alt="image_1" width="800" height="300">
+        <hr>
+
+        <h2>What is an automation system?</h2>
+        <p>The basic definition of industrial automation can be described as a set of computerized systems which are found in a manufacturing facility. These systems can be seen as a way to reduce human labor and automate mundane, mechanical, and repetitive tasks. The automation systems in the industry have evolved over time. As a result, different industrial automation systems are available for use today. The main goal of these systems is to make the processes in industries more efficient and save costs by minimizing human errors.</p>
+
+        <p>With the rise of modernization and technological advances, almost every industry is evolving, and the manufacturing industry is not far behind. This sector has seen large-scale adoption of these automation systems to increase effectiveness and productivity in facilities. In fact, the adoption is such that the industrial automation industry has seen unprecedented growth over the last decade. As per the data released by Fortune Business Insights, the global industrial automation market is projected to grow to a staggering $296.70 billion by 2026.</p>
+
+        <p>These numbers show real promise for the future of the industrial automation sector. However, many firms are still determining if this technological advancement is right for them. Therefore, in order to answer and clarify all doubts related to industrial automation and its undisputed benefits, we will highlight some of the most prominent types of industrial automation systems found in various manufacturing facilities.</p>
+
+        <h2>What is system automation?</h2>
+        <p>System automation refers to the use of technology to control and operate processes without human intervention. It integrates software, hardware, and other components to perform specific tasks, improving efficiency, reliability, and accuracy. Automation can be applied to various industries, from manufacturing to IT, streamlining operations and reducing manual effort.</p>
+
+        <img src="https://c4046159.github.io/WEB_TECHNOLOGIES/week2.2.jpg" alt="image_2" width="800" height="300">
+
+        <h2>Types of industrial automation systems</h2>
+
+        <h3>Fixed automation</h3>
+        <p>A fixed automation system is also known as hardwired automation. This type is used for high-volume production, repetitive tasks, and products with a long-life cycle. Though it is tricky to accommodate changes in product design with this type, it helps cut time and labour costs.</p>
+
+        <p>Examples of fixed automation systems:</p>
+        <ul>
+            <li>Programmable Logic Controller (PLC) based systems</li>
+            <li>Human Machine Interface (HMI), which provides operators with process information via displays</li>
+        </ul>
+
+        <img src="https://c4046159.github.io/WEB_TECHNOLOGIES/week2.3.jpg" alt="image_3" width="800" height="800">
+
+        <h3>Flexible automation</h3>
+        <p>This system is the most commonly used. It utilizes programmable logic controllers (PLCs) that automate a wide range of control tasks. It allows a more flexible production process using programmable logic and networking.</p>
+
+        <p>Examples include automatic guided vehicles, automobiles, and CNC machinery. It's suitable for batch processing, discrete manufacturing, and job shops.</p>
+
+        <h3>Programmable automation</h3>
+        <p>Best for batch production with medium to high volume. The system must be reprogrammed and reconfigured between batches, which takes time. Examples include CNC machines, PLCs, and industrial robots.</p>
+
+        <h2>Benefits of an industrial automation system</h2>
+        <p>Technologies in industrial automation have evolved with the Industrial Internet of Things (IIoT). This has enabled firms to unlock significant benefits:</p>
+
+        <h3>Enhanced quality</h3>
+        <p>Automation ensures consistency and fewer human errors, resulting in higher-quality products.</p>
+
+        <h3>Better efficiency and higher output</h3>
+        <p>Robots can work 24/7 and produce more efficiently than human operators.</p>
+
+        <h3>Cost efficient</h3>
+        <p>Though robots require an upfront investment, they reduce long-term labour and operational costs.</p>
+
+        <h3>Safer operation</h3>
+        <p>Automation minimizes human exposure to dangerous environments, improving workplace safety.</p>
+
+        <img src="https://c4046159.github.io/WEB_TECHNOLOGIES/week2.4.jpg" alt="image_4" width="800" height="300">
+
+        <hr>
+        <h2>
+            <a href="https://c4046159.github.io/WEB_TECHNOLOGIES/index.html" class="button">HOME (Week One)</a>
+        </h2>
+    </main>
+</body>
+</html>
