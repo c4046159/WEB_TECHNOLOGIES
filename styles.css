@@ -61,3 +61,56 @@
 
         }
 
+        form {
+            
+    padding: 2em;
+    max-width: 600px;
+    margin: 2em auto;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form p {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-bottom: 1em;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 1em 0 0.3em;
+    font-family: 'Arial', Arial, sans-serif;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="submit"],
+
+{
+        
+button[type="submit"] {
+    background-color: #FFD700;
+    color: #FFF000;
+    padding: 1em 2em;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+    margin: 1em auto 0;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+    background-color: #FFC300;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid #000;
+}
+
