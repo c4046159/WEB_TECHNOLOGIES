@@ -9,6 +9,7 @@
             background-color: blue;
             padding: 1em;
             text-align: center;
+            border-style: solid;    
         }
 
         h1, h2, h3 {
@@ -20,6 +21,8 @@
         p {
             text-align: justify;
             margin-bottom: 1em;
+            padding-top: 20px;
+            padding-bottom: 20px;    
         }
 
         .button {
@@ -43,7 +46,8 @@
         .button:hover {
             background-color: #FFC300;
         }
-
+        
+        
         hr {
             margin: 2em 0;
         }
