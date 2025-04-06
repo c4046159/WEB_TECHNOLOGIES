@@ -2,7 +2,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
     $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
+    $email = htmlspecialchars($_POST['mail']);
 
     $to = "Carlos.Pizarro@student.shu.ac.uk";
 
@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = "A new subscription from:\n\n";
     $message .= "Name: $name\n";
     $message .= "Name: $surname\n";  
-    $message .= "Email: $email\n";
+    $message .= "Email: $mail\n";
 
     if (mail($to, $subject, $message, $headers)) {
         echo "<h2>Thank you! Your submission has been sent.</h2>";
