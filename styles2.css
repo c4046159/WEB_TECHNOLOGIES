@@ -6,6 +6,7 @@ body {
 }
 
 header {
+    font-family: Impact, sans-serif;
     background-color: cyan;
     padding: 1em;
     text-align: center;
