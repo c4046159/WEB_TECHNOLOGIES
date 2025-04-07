@@ -117,7 +117,31 @@
      <fieldset>
         <legend> Configurate the site to your liking:</legend>
 
-         
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link id="themeStylesheet" rel="stylesheet" href="style.css">
+<body>
+
+  <button id="toggleButton">Off</button>
+
+  <script>
+    const toggleButton = document.getElementById('toggleButton');
+    const stylesheetLink = document.getElementById('themeStylesheet');
+
+    toggleButton.addEventListener('click', () => {
+      const currentHref = stylesheetLink.getAttribute('href');
+
+      if (currentHref === 'style.css') {
+        stylesheetLink.setAttribute('href', 'style2.css');
+        toggleButton.textContent = 'On';
+      } else {
+        stylesheetLink.setAttribute('href', 'style.css');
+        toggleButton.textContent = 'Off';
+      }
+    });
+  </script>
+
+</body>
+</html>
          
      </fieldset>
      <hr>
