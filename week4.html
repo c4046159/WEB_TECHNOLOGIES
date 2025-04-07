@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles.css">
     
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link id="themeStylesheet" rel="stylesheet" href="style.css">
+  <link id="themeStylesheet" rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -132,10 +132,10 @@
       const currentHref = stylesheetLink.getAttribute('href');
 
       if (currentHref === 'style.css') {
-        stylesheetLink.setAttribute('href', 'style2.css');
+        stylesheetLink.setAttribute('href', 'styles2.css');
         toggleButton.textContent = 'On';
       } else {
-        stylesheetLink.setAttribute('href', 'style.css');
+        stylesheetLink.setAttribute('href', 'styles.css');
         toggleButton.textContent = 'Off';
       }
     });
