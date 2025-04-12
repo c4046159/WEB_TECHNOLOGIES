@@ -132,7 +132,7 @@
 
      <h2> Java Script Section Of This Site:</h2>
      <fieldset>
-        <legend> High Contrast Settings:</legend>
+        <legend> High Contrast Settings:(heritage from week 4)</legend>
 
 
   <button id="toggleButton">Off</button>
@@ -154,6 +154,37 @@
     });
   </script>
 
+<hr>
+<fieldset>      
+    <div>
+        <input type="checkbox" id="check1" value="1"> Paragraph 1
+        <input type="checkbox" id="check2" value="2"> Paragraph 2
+        <input type="checkbox" id="check3" value="3"> Paragraph 3
+    </div>
+    <button onclick="hideSelected()">Hide Selected</button>
+
+    <script>
+        function hideSelected() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    const paragraphId = checkbox.value;
+                    const paragraph = document.getElementById(paragraphId);
+    
+                    if (paragraph) {
+                        paragraph.textContent = "Hidden Paragraph";
+                    }
+                }
+            });
+        }
+    </script>
+ 
+<h3> Explanation of this Javascript code:</h3>
+<p>1. Creates three paragraphs with IDs 1, 2, and 3.
+2. Adds checkboxes for each paragraph, with values matching the paragraph IDs.<br>
+3. Includes a button that triggers the `hideSelected()` function.<br>
+4. The `hideSelected()` function checks which checkboxes are selected and replaces the corresponding paragraphs' content with "Hidden Paragraph" using DOM manipulation.<br>
+</p>
 
          
      </fieldset>
@@ -164,8 +195,10 @@
         </h2>
 
      <p>Note: the code references for this page are from the w3 Schools page -> https://www.w3schools.com/html/default.asp</p>
+     
+         <p>Note </p><a href="https://github.com/public-apis/public-apis">Public APIs GitHub</a>
+         
     </body>
-     <p>Note </p><a href="https://github.com/public-apis/public-apis">Public APIs GitHub</a>
 </html>
 
 
