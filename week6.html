@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -8,8 +7,6 @@
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link id="themeStylesheet" rel="stylesheet" href="styles.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 </head>
 
 <body>
@@ -102,8 +99,7 @@
     
     </main>
 
-   
-        <hr>
+   <hr>
         <h1> Fill out our FORM to keep you up to date with the latest news >>>></h1>
  <form>
  <form id="Form" action="action_page.php" method="save">
@@ -147,8 +143,6 @@
     });
   </script>
 
-
-     
 <hr>
 
      <h2> Java Script Section Of This Site:</h2>
@@ -236,11 +230,19 @@
          <p>Note </p><a href="https://github.com/public-apis/public-apis">Public APIs GitHub</a>
         <hr>
          
-<P> The API applied is the YouTube API from:<a href="https://developers.google.com/youtube/iframe_api_reference"></a>  </P>
+<P> The API applied is the YouTube API from: </P>
+         <a href="https://developers.google.com/youtube/iframe_api_reference">"https://developers.google.com/youtube/iframe_api_reference"/a>  
 
    <div id="player"></div>
 
-    <script>
+<style>
+  #player {
+    margin: 0 auto;
+    display: block;
+  }
+</style>
+   
+<script>
       var tag = document.createElement('script');
 
       tag.src = "https://www.youtube.com/iframe_api";
@@ -249,7 +251,6 @@
     var player;
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-          alignment:'center',
           height: '480',
           width: '640',
           videoId: 'tgcdSkZ5OtE',
@@ -287,4 +288,8 @@
     </body>
          
 </html>
+
+
+
+
 
