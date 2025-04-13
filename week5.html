@@ -212,16 +212,51 @@
          <p>Note </p><a href="https://github.com/public-apis/public-apis">Public APIs GitHub</a>
         <hr>
          
-<P> The API applied is the YouTube API from: <a href="https://developers.google.com/youtube/iframe_api_reference"></a> 
-         
+<P> The API applied is the YouTube API from:<a href="https://developers.google.com/youtube/iframe_api_reference"></a>  </P>
+
+   <div id="player"></div>
+
+    <script>
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '480',
+          width: '640',
+          videoId: 'M7lc1UVf-VE',
+          playerVars: {
+            'playsinline': 1
+          },
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+    </script>
+       
      <hr>
         <h2>
             <a href="https://c4046159.github.io/WEB_TECHNOLOGIES/index.html" class="button">HOME (Week One)</a>
         </h2>
-
-    
-     
-
          
 
     </body>
