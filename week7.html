@@ -176,5 +176,50 @@
       }
     }
   </script>
+Here's how you can **add a new section to your Bootstrap page** that uses **jQuery to change background color and fonts** dynamically by fetching data from a **free API**.
+
+We'll use the **[Google Fonts API](https://fonts.google.com/)** for font selection and the **[The Color API](https://www.thecolorapi.com/)** to fetch random color values.
+
+---
+
+### ✅ Step-by-step additions:
+
+#### 1. 📦 Add this section **inside your `<body>`**, before the closing `</body>` tag:
+
+```html
+<div class="container my-5">
+  <h2 class="text-center">Customise Style via API</h2>
+  <p>This section allows you to change the font and background colour using data from free APIs.</p>
+
+  <div class="d-flex gap-3">
+    <button id="changeColorBtn" class="btn btn-info">Change Background Colour</button>
+    <button id="changeFontBtn" class="btn btn-secondary">Change Font</button>
+  </div>
+
+  <div id="apiStylePreview" class="p-5 mt-4" style="background-color: #f8f9fa;">
+    <p id="apiStyledText" class="fs-4">Watch this text change style dynamically!</p>
+  </div>
+</div>
+```
+<script>
+  // Change background color using The Color API
+  $('#changeColorBtn').click(function () {
+    $.get('https://www.thecolorapi.com/id?format=json&hex=' + Math.floor(Math.random()*16777215).toString(16), function (data) {
+      $('#apiStylePreview').css('background-color', data.hex.value);
+    });
+  });
+
+  // Change font using Google Fonts API (predefined set for demo)
+  const fonts = ['Roboto', 'Lobster', 'Poppins', 'Merriweather', 'Montserrat'];
+
+  $('#changeFontBtn').click(function () {
+    const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
+    const fontLink = `<link href="https://fonts.googleapis.com/css2?family=${randomFont.replace(/ /g, '+')}&display=swap" rel="stylesheet">`;
+
+    $('head').append(fontLink);
+    $('#apiStyledText').css('font-family', `'${randomFont}', sans-serif`);
+  });
+</script>
+
 </body>
 </html>
