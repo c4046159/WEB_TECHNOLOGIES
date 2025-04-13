@@ -215,7 +215,12 @@
 <P> The API applied is the YouTube API from:<a href="https://developers.google.com/youtube/iframe_api_reference"></a>  </P>
 
    <div id="player"></div>
-
+<style>
+  #player {
+    margin: 0 auto;
+    display: block;
+  }
+</style>
     <script>
       var tag = document.createElement('script');
 
@@ -225,7 +230,6 @@
     var player;
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-          alignment:'center',
           height: '480',
           width: '640',
           videoId: 'tgcdSkZ5OtE',
