@@ -152,48 +152,51 @@
 <hr>
 <fieldset>      
         
-        <input type="checkbox" id="check1" value="1"> Paragraph 1 <be>
-        <input type="checkbox" id="check2" value="2"> Paragraph 2 <be>
-        <input type="checkbox" id="check3" value="3"> Paragraph 3 
-                    
-    <button onclick="hideSelected()">Hide Selected</button>
-    <button onclick="resetParagraphs()">Reset</button>    
+   
 
- <script>
+
+    <div>
+        <input type="checkbox" id="check1" value="1"> Paragraph 1 <br>
+        <input type="checkbox" id="check2" value="2"> Paragraph 2 <br>
+        <input type="checkbox" id="check3" value="3"> Paragraph 3 <br>
+    
+    </div>
+        
+    <button onclick="hideSelected()">Hide Selected</button>
+    <button onclick="resetPage()">Reset</button>
+
+    <script>
         function hideSelected() {
+          
             const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+     
             checkboxes.forEach(checkbox => {
                 if (checkbox.checked) {
+                  
                     const paragraphId = checkbox.value;
+           
                     const paragraph = document.getElementById(paragraphId);
-    
+                  
                     if (paragraph) {
                         paragraph.textContent = "Hidden Paragraph";
                     }
                 }
             });
         }
-        
-                function resetParagraphs() {
-            
-            for (const id in originalContent) {
-                const paragraph = document.getElementById(id);
-                if (paragraph) {
-                    paragraph.textContent = originalContent[id];
-                }
-            }
-            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            checkboxes.forEach(checkbox => {
-                checkbox.checked = false;
-            });
+
+        function resetPage() {
+            location.reload();
         }
+    
+
+     
     </script>
  
 <h3> Explanation of this Javascript code:</h3>
 <p>1. Creates three paragraphs with IDs 1, 2, and 3.
 2. Adds checkboxes for each paragraph, with values matching the paragraph IDs.<br>
 3. Includes a button that triggers the `hideSelected()` function.<br>
-4. The `hideSelected()` function checks which checkboxes are selected and replaces the corresponding paragraphs' content with "Hidden Paragraph" using DOM manipulation.<br>
+4. The `hideSelected()` function checks which checkboxes are selected and replace the corresponding paragraphs' content with "Hidden Paragraph" using DOM manipulation.<br>
 </p>
 
          
