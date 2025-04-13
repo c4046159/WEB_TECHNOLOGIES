@@ -142,6 +142,77 @@
       });
     });
   </script>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Newsletter Form</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    fieldset { width: 300px; }
+    .error { color: red; display: none; }
+    .success { color: green; display: none; }
+  </style>
+</head>
+<body>
+
+  <h1>Fill out our FORM to keep you up to date with the latest news</h1>
+
+  <form id="newsletterForm">
+    <fieldset>
+      <legend>Subscribe to our newsletter:</legend>
+
+      <label for="name">First name:</label><br>
+      <input type="text" id="name" name="name"><br>
+
+      <label for="surname">Last name:</label><br>
+      <input type="text" id="surname" name="surname"><br>
+
+      <label for="mail">Email address:</label><br>
+      <input type="text" id="mail" name="mail"><br>
+
+      <label for="terms">
+        <input type="checkbox" id="terms" name="terms">
+        Click to accept our terms and conditions.
+      </label><br><br>
+
+      <input type="reset" value="Reset">
+      <input type="submit" value="Submit">
+      
+      <p class="error" id="formError">Please fill out all fields and accept the terms.</p>
+      <p class="success" id="formSuccess">Your data has been saved successfully!</p>
+    </fieldset>
+  </form>
+
+  <script>
+    $(document).ready(function () {
+      $('#newsletterForm').submit(function (e) {
+        e.preventDefault();
+
+        let name = $('#name').val().trim();
+        let surname = $('#surname').val().trim();
+        let email = $('#mail').val().trim();
+        let termsChecked = $('#terms').is(':checked');
+
+        if (name && surname && email && termsChecked) {
+          $('#formError').hide();
+
+          // Send data to PHP to save it
+          $.post('save_form.php', {
+            name: name,
+            surname: surname,
+            mail: email
+          }, function(response) {
+            $('#formSuccess').show().delay(3000).fadeOut();
+            $('#newsletterForm')[0].reset();
+          });
+          
+        } else {
+          $('#formError').show();
+        }
+      });
+    });
+  </script>
 
 <hr>
 
