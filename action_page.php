@@ -1,24 +1,16 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
- 
     $name = htmlspecialchars($_POST['name']);
+    $surname = htmlspecialchars($_POST['surname']);
     $email = htmlspecialchars($_POST['mail']);
 
-    $to = "Carlos.Pizarro@student.shu.ac.uk";
+    date_default_timezone_set("Europe/London"); 
+    $timestamp = date("Y-m-d_H-i-s");
+    $filename = "form_" . preg_replace("/[^a-zA-Z0-9]/", "", $name) . "_$timestamp.txt";
 
-    $subject = "New Form Subscriber";
+    $content = "Name: $name\nSurname: $surname\nEmail: $email\nDate: $timestamp";
 
-    $message = "A new subscription from:\n\n";
-    $message .= "Name: $name\n";
-    $message .= "Name: $surname\n";  
-    $message .= "Email: $mail\n";
-
-    if (mail($to, $subject, $message, $headers)) {
-        echo "<h2>Thank you! Your submission has been sent.</h2>";
-    } else {
-        echo "<h2>Sorry, there was a problem sending your message.</h2>";
-    }
-} else {
-    echo "<p>No data submitted.</p>";
+    file_put_contents($filename, $content);
+    echo "Saved";
 }
 ?>
