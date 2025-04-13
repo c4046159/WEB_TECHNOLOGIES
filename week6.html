@@ -98,66 +98,77 @@
     </main>
 
    <hr>
-        <h2> jQuery Section Of This Site:</h2>
-    <hr>
-        <h1> Fill out our FORM to keep you up to date with the latest news >>>></h1>
- <form>
- <form id="Form" action="action_page.php" method="save">
- <style>
-    fieldset { width: 600px; }
-    error { color: red; display: none; }
-    success { color: green; display: none; }
-  </style>
 
-<fieldset>
+
+<h2>jQuery Section Of This Site:</h2>
+<hr>
+<h1>Fill out our FORM to keep you up to date with the latest news >>>></h1>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+  fieldset { width: 600px; }
+  .error { color: red; display: none; }
+  .success { color: green; display: none; }
+</style>
+
+
+<form id="newsletterForm" action="action_page.php" method="post">
+  <fieldset>
     <legend>Subscribe to our newsletter:</legend> 
-         
-  <label for="name">First name:</label><br>
-  <input type="text" id="name" name="name"><br>
-  <label for="surname">Last name:</label><br>
-  <input type="text" id="surname" name="surname"><br>
-  <label for="email">Email address:</label><br>
-  <input type="text" id="mail" name="mail"><br>
-  <label for="terms">Click to accept our terms and conditions.</label><br>
-  <input type="checkbox" id="terms" name="terms"><br>    
-  <input type="reset" value="Reset"><br>
-  <input type="submit" value="Submit">
+     
+    <label for="name">First name:</label><br>
+    <input type="text" id="name" name="name"><br>
 
-<p class="error" id="formError">Please fill out all fields and accept the terms.</p>
-<p class="success" id="formSuccess">Your data has been saved successfully!</p>
-    
- </fieldset>    
- </form>
+    <label for="surname">Last name:</label><br>
+    <input type="text" id="surname" name="surname"><br>
+
+    <label for="mail">Email address:</label><br>
+    <input type="text" id="mail" name="mail"><br>
+
+    <label for="terms">Click to accept our terms and conditions.</label><br>
+    <input type="checkbox" id="terms" name="terms"><br><br>
+
+    <input type="reset" value="Reset">
+    <input type="submit" value="Submit"><br>
+
+    <p class="error" id="formError">Please fill out all fields and accept the terms.</p>
+    <p class="success" id="formSuccess">Your data has been saved successfully!</p>
+  </fieldset>
+</form>
+
 
 <script>
-    $(document).ready(function () {
-      $('#Form').submit(function (e) {
-        e.preventDefault();
+  $(document).ready(function () {
+    $('#newsletterForm').submit(function (e) {
+      e.preventDefault();
 
-        let name = $('#name').val().trim();
-        let surname = $('#surname').val().trim();
-        let email = $('#mail').val().trim();
-        let termsChecked = $('#terms').is(':checked');
+      let name = $('#name').val().trim();
+      let surname = $('#surname').val().trim();
+      let email = $('#mail').val().trim();
+      let termsChecked = $('#terms').is(':checked');
 
-        if (name && surname && email && termsChecked) {
-          $('#formError').hide();
+      if (name && surname && email && termsChecked) {
+        $('#formError').hide();
 
-          $.post('action_page.php', {
-            name: name,
-            surname: surname,
-            mail: email
-          }, function(response) {
-            $('#formSuccess').show().delay(3000).fadeOut();
-            $('#newsletterForm')[0].reset();
-          });
-          
-        } else {
-          $('#formError').show();
-        }
-      });
+        $.post('action_page.php', {
+          name: name,
+          surname: surname,
+          mail: email
+        }, function(response) {
+          $('#formSuccess').show().delay(3000).fadeOut();
+          $('#newsletterForm')[0].reset();
+        });
+
+      } else {
+        $('#formError').show();
+        $('#formSuccess').hide();
+      }
     });
-  </script>
+  });
+</script>
 
+    
 <hr>
 
      <h2> Java Script Section Of This Site:</h2>
