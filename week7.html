@@ -382,86 +382,9 @@
     
 <hr>
 
-     <h2> Java Script Section Of This Site:</h2>
-     <fieldset>
-        <legend> High Contrast Settings:(heritage from week 4)</legend>
-
-
-  <button id="toggleButton">Off</button>
-
-  <script>
-    const toggleButton = document.getElementById('toggleButton');
-    const stylesheetLink = document.getElementById('themeStylesheet');
-
-    toggleButton.addEventListener('click', () => {
-      const currentHref = stylesheetLink.getAttribute('href');
-
-      if (currentHref === 'styles.css') {
-        stylesheetLink.setAttribute('href', 'styles2.css');
-        toggleButton.textContent = 'On';
-      } else {
-        stylesheetLink.setAttribute('href', 'styles.css');
-        toggleButton.textContent = 'Off';
-      }
-    });
-  </script>
-
-<hr>
-<fieldset>      
-        
-   
-
-
-    <div>
-        <input type="checkbox" id="check1" value="1"> Paragraph 1 <br>
-        <input type="checkbox" id="check2" value="2"> Paragraph 2 <br>
-        <input type="checkbox" id="check3" value="3"> Paragraph 3 <br>
-    
-    </div>
-        
-    <button onclick="hideSelected()">Hide Selected</button>
-    <button onclick="resetPage()">Reset</button>
-
-    <script>
-        function hideSelected() {
-          
-            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-     
-            checkboxes.forEach(checkbox => {
-                if (checkbox.checked) {
-                  
-                    const paragraphId = checkbox.value;
-           
-                    const paragraph = document.getElementById(paragraphId);
-                  
-                    if (paragraph) {
-                        paragraph.textContent = "Hidden Paragraph";
-                    }
-                }
-            });
-        }
-
-        function resetPage() {
-            location.reload();
-        }
-    
-
-     
-    </script>
- 
-<h3> Explanation of this Javascript code:</h3>
-<p>1. Takes the three paragraphs with IDs 1, 2, and 3.<br>
-2. Adds checkboxes for each paragraph, with values matching the paragraph IDs.<br>
-3. Includes a button that triggers the `hideSelected()` function.<br>
-4. The `hideSelected()` function checks which checkboxes are selected and replace the corresponding paragraphs' content with "Hidden Paragraph" using DOM manipulation.<br>
-5. Adds the Reset button with the function to reload the page and recover the original text.
-</p>
-    <br>
  <p>Note: the code references for this page are from the:</p> <a href="https://www.w3schools.com/html/default.asp"> w3 Schools page </a>       
   
-</fieldset>
-
-   <hr>
+  <hr>
         <h3 style="border: 3px solid black; padding: 10px; font-weight: bold; text-align: center;">API section of the page:</h3>
         <hr>
          <p>Note </p><a href="https://github.com/public-apis/public-apis">Public APIs GitHub</a>
